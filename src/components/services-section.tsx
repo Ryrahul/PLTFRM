@@ -6,17 +6,33 @@ interface Service {
   description: string;
 }
 
-// Create a services array with example data
 const services: Service[] = Array(6).fill({
   title: "Graphics & Video",
-  description: "We craft captivating visuals that bring your brand to life, from eye-catching logos to engaging social media posts.",
+  description:
+    "We craft captivating visuals that bring your brand to life, from eye-catching logos to engaging social media posts.",
 });
 
 export default function ServicesSection() {
   return (
     <div className="relative bg-[#2b42f3] px-4 py-16 md:px-6 lg:px-8">
-      {/* Zigzag border */}
-      <div className="absolute top-0 left-0 right-0 h-8">
+      {/* Mobile zigzag border - now with more points */}
+      <div className="absolute top-0 left-0 right-0 h-8 block md:hidden">
+        <svg
+          className="w-full h-full"
+          viewBox="0 0 240 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 0V4L10 8L20 4L30 8L40 4L50 8L60 4L70 8L80 4L90 8L100 4L110 8L120 4L130 8L140 4L150 8L160 4L170 8L180 4L190 8L200 4L210 8L220 4L230 8L240 4V0H0Z"
+            fill="white"
+          />
+        </svg>
+      </div>
+
+      {/* Desktop zigzag border */}
+      <div className="absolute top-0 left-0 right-0 h-8 hidden md:block">
         <svg
           className="w-full h-full"
           viewBox="0 0 1200 32"
@@ -30,6 +46,7 @@ export default function ServicesSection() {
           />
         </svg>
       </div>
+
       <div className="mx-auto max-w-6xl pt-8">
         <h1 className="mb-16 text-4xl font-extrabold text-white md:text-5xl lg:text-6xl">
           Our Services
@@ -42,7 +59,9 @@ export default function ServicesSection() {
                   <Pen className="h-6 w-6 text-white" />
                 </div>
                 <div className="space-y-1">
-                  <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {service.title}
+                  </h3>
                   <p className="text-gray-500">{service.description}</p>
                 </div>
               </CardContent>
@@ -50,7 +69,8 @@ export default function ServicesSection() {
           ))}
         </div>
         <p className="mt-12 text-center text-lg text-white">
-          We will have some extra text here, explaining that we have these services and many more in-house.
+          We will have some extra text here, explaining that we have these
+          services and many more in-house.
         </p>
       </div>
     </div>
