@@ -1,11 +1,14 @@
+import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "./ui/card";
 import { Pen } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface Service {
   title: string;
   description: string;
 }
 
+// Sample services data
 const services: Service[] = Array(6).fill({
   title: "Graphics & Video",
   description:
@@ -13,9 +16,55 @@ const services: Service[] = Array(6).fill({
 });
 
 export default function ServicesSection() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  // Set up the Intersection Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Change condition to trigger only after scrolling down a bit more
+        if (entry.isIntersecting && entry.intersectionRatio > 0.2) { // Change the ratio to determine how much of the section should be visible
+          setIsVisible(true);
+          observer.disconnect(); // Stop observing once it becomes visible
+        }
+      },
+      { threshold: 0.2 } // Trigger when 20% of the component is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  // Animation variants for the main section
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  // Animation variants for individual service cards
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div className="relative bg-[#2b42f3] px-4 py-16 md:px-6 lg:px-8">
-      {/* Mobile zigzag border - now with more points */}
+    <motion.div
+      ref={sectionRef}
+      className="relative bg-[#2b42f3] px-4 py-16 md:px-6 lg:px-8"
+      initial="hidden"
+      animate={isVisible ? "visible" : "hidden"}
+      variants={sectionVariants}
+      transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }} // Delay for the section animation
+    >
+      {/* Mobile zigzag border */}
       <div className="absolute top-0 left-0 right-0 h-8 block md:hidden">
         <svg
           className="w-full h-full"
@@ -53,19 +102,31 @@ export default function ServicesSection() {
         </h1>
         <div className="grid gap-6 md:grid-cols-2">
           {services.map((service, index) => (
-            <Card key={index} className="overflow-hidden bg-white">
-              <CardContent className="flex items-start gap-4 p-6">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-600">
-                  <Pen className="h-6 w-6 text-white" />
-                </div>
-                <div className="space-y-1">
-                  <h3 className="text-xl font-semibold text-gray-900">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-500">{service.description}</p>
-                </div>
-              </CardContent>
-            </Card>
+            <motion.div
+              key={index}
+              initial="hidden"
+              animate={isVisible ? "visible" : "hidden"}
+              variants={cardVariants}
+              transition={{
+                duration: 0.5,
+                ease: "easeInOut",
+                delay: index * 0.1 + 0.3, // Stagger the animations with an additional delay for each card
+              }}
+            >
+              <Card className="overflow-hidden bg-white">
+                <CardContent className="flex items-start gap-4 p-6">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-600">
+                    <Pen className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="text-xl font-semibold text-gray-900">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-500">{service.description}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
         <p className="mt-12 text-center text-lg text-white">
@@ -73,6 +134,6 @@ export default function ServicesSection() {
           services and many more in-house.
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }

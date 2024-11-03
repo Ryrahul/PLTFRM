@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import globe from "../assets/globe.png";
 import QuoteButton from "./quote-button";
+import { motion } from "framer-motion";
 
 const FloatingIcon: FC<{
   Icon: typeof ShoppingBag;
@@ -16,10 +17,16 @@ const FloatingIcon: FC<{
   position: string;
   delay?: string;
 }> = ({ Icon, color, position, delay = "0s" }) => (
-  <div
+  <motion.div
     className={`absolute ${position} transform hover:scale-110 transition-all duration-300`}
-    style={{
-      animation: `float 6s ease-in-out infinite ${delay}`,
+    initial={{ y: 0 }}
+    animate={{ y: -20 }}
+    transition={{
+      duration: 1.5,
+      ease: "easeInOut",
+      repeat: Infinity,
+      repeatType: "reverse",
+      delay: parseFloat(delay), // Convert delay to number
     }}
   >
     <div
@@ -29,10 +36,16 @@ const FloatingIcon: FC<{
     >
       <Icon className="w-4 h-4 md:w-6 md:h-6" />
     </div>
-  </div>
+  </motion.div>
 );
 
 const HeroSection: FC = () => {
+  // Animation variants for the main content
+  const contentVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <main className="relative overflow-hidden">
       {/* Grid Background */}
@@ -43,11 +56,26 @@ const HeroSection: FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-1 relative">
+      <motion.div
+        className="container mx-auto px-4 py-1 relative"
+        initial="hidden"
+        animate="visible"
+        variants={contentVariants}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+      >
         <div className="max-w-4xl mx-auto text-center space-y-4 md:space-y-6">
-          <h1 className="text-4xl md:text-7xl leading-tight md:leading-normal font-extrabold text-[#2B42F3] relative z-10">
+          <motion.h1
+            className="text-4xl md:text-7xl leading-tight md:leading-normal font-extrabold text-[#2B42F3] relative z-10"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0, y: -20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          >
             Watch The Future
-          </h1>
+          </motion.h1>
           <p className="text-lg md:text-2xl text-gray-600 font-medium px-4 relative z-10">
             We craft digital solutions that drive growth, boost visibility, and
             engage audiences.
@@ -105,22 +133,7 @@ const HeroSection: FC = () => {
           position="bottom-20 left-6 md:bottom-1/3 md:bottom-16 md:left-32"
           delay="1.2s"
         />
-      </div>
-
-      {/* CSS Animation */}
-      <style jsx>{`
-        @keyframes float {
-          0% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-          100% {
-            transform: translateY(0px);
-          }
-        }
-      `}</style>
+      </motion.div>
     </main>
   );
 };

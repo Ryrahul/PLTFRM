@@ -1,6 +1,5 @@
 import React from "react";
 import { navLinks, socialLinks } from "../data/data";
-// import logo from "../assets/LOGO.svg";
 
 const Navbar: React.FC = () => {
     return (
@@ -10,9 +9,6 @@ const Navbar: React.FC = () => {
                     <a href="/" className="font-black text-3xl">
                         PLTFRM<span className="text-blue-600">.</span>
                     </a>
-
-                    {/* <img src={logo} alt="LOGO" className="h-5 w-[118px]" /> */}
-
                     <nav className="hidden md:flex items-center gap-8">
                         {navLinks.map(({ label, url }) => (
                             <a key={label} href={url} className="text-sm font-medium">
