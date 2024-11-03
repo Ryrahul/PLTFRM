@@ -1,4 +1,3 @@
-import React from "react";
 import AboutUs from "./components/aboutus-section";
 import BrandCarousel from "./components/brand-caraousel";
 import FAQSection from "./components/faq-section";

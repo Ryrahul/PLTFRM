@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
-import { Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin,  } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function FAQSection() {
