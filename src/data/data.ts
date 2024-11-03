@@ -35,3 +35,65 @@
     },
   ];
   
+  export const CompanyData = [
+    {
+      "name": "amazon",
+      "path": "/companies/shopify.png",
+      "id": 1
+    },
+    {
+      "name": "razorpay",
+      "path": "/companies/razorpay.png",
+      "id": 2
+    },
+    {
+      "name": "shopify",
+      "path": "/companies/shopify.png",
+      "id": 3
+    },
+    {
+      "name": "framer",
+      "path": "/companies/framer.png",
+      "id": 4
+    },
+    {
+      "name": "meta",
+      "path": "/companies/meta.png",
+      "id": 5
+    },
+    {
+      "name": "wordpress",
+      "path": "/companies/wordpress.png",
+      "id": 6
+    },
+    {
+      "name": "amazon",
+      "path": "/companies/shopify.png",
+      "id": 1
+    },
+    {
+      "name": "razorpay",
+      "path": "/companies/razorpay.png",
+      "id": 2
+    },
+    {
+      "name": "shopify",
+      "path": "/companies/shopify.png",
+      "id": 3
+    },
+    {
+      "name": "framer",
+      "path": "/companies/framer.png",
+      "id": 4
+    },
+    {
+      "name": "meta",
+      "path": "/companies/meta.png",
+      "id": 5
+    },
+    {
+      "name": "wordpress",
+      "path": "/companies/wordpress.png",
+      "id": 6
+    },
+  ]

@@ -13,6 +13,7 @@
 // ]);
 
 import AboutUs from "./components/aboutus-section"
+import BrandCarousel from "./components/brand-caraousel"
 import FAQSection from "./components/faq-section"
 import HeroSection from "./components/hero-section"
 import Navbar from "./components/navbar"
@@ -26,6 +27,7 @@ function App() {
       <HeroSection />
       <ServicesSection />
       <AboutUs />
+      <BrandCarousel />
       <FAQSection />
     </div>
   )

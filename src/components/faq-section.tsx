@@ -45,7 +45,7 @@ export default function FAQSection() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-blue-600 text-white">
+      <footer className="bg-[#2B42F3] text-white">
         <div className="max-w-6xl mx-auto px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
