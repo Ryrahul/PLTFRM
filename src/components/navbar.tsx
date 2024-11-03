@@ -1,6 +1,6 @@
 import React from "react";
 import { navLinks, socialLinks } from "../data/data";
-import logo from "../assets/LOGO.svg";
+// import logo from "../assets/LOGO.svg";
 
 const Navbar: React.FC = () => {
     return (

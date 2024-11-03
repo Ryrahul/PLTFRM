@@ -71,7 +71,7 @@ const QuoteButton: React.FC = () => {
             fill="currentColor"
           />
         </svg>
-        Get a Quote
+        GET A QUOTE
       </span>
     </button>
   );
