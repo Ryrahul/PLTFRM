@@ -20,9 +20,9 @@ const FloatingIcon: FC<{
   <motion.div
     className={`absolute ${position} transform hover:scale-110 transition-all duration-300`}
     initial={{ y: 0 }}
-    animate={{ y: -20 }}
+    animate={{ y: -50 }}
     transition={{
-      duration: 1.5,
+      duration: 1.2,
       ease: "easeInOut",
       repeat: Infinity,
       repeatType: "reverse",
