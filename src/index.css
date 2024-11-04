@@ -92,3 +92,7 @@
     @apply translate-y-1 transition-transform duration-75;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
