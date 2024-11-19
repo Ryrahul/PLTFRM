@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
@@ -29,48 +27,51 @@ export default function FeaturedProjects({ projects = defaultProjects }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="group rounded-3xl overflow-hidden bg-white border shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className="aspect-[4/3] relative bg-gray-50 p-12">
-                <img
-                  src={project.imageUrl}
-                  alt={project.title}
-                  className="object-contain p-8"
-                />
-              </div>
-              <div className="p-8">
-                <div className="flex items-start justify-between gap-4 mb-4">
-                  <h3 className="text-xl font-bold text-gray-900">
-                    {project.title}
-                  </h3>
-                  <Badge variant="secondary" className="shrink-0">
-                    {project.category}
-                  </Badge>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group rounded-3xl overflow-hidden bg-white border shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#2b42f3] focus:ring-offset-2"
+              >
+                <div className="aspect-[4/3] relative bg-gray-50 p-12">
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="object-contain w-full h-full p-8"
+                  />
                 </div>
-                <p className="text-gray-600 mb-6 line-clamp-3">
-                  {project.description}
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-2">
-                    {project.tags.map((tag, i) => (
-                      <Badge key={i} variant="outline" className="font-normal">
-                        {tag}
-                      </Badge>
-                    ))}
+                <div className="p-8">
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <h3 className="text-xl font-bold text-gray-900">
+                      {project.title}
+                    </h3>
+                    <Badge variant="secondary" className="shrink-0">
+                      {project.category}
+                    </Badge>
                   </div>
-                  <Button variant="ghost" size="sm" className="group" asChild>
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
+                  <p className="text-gray-600 mb-6 line-clamp-3">
+                    {project.description}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex gap-2 flex-wrap">
+                      {project.tags.map((tag, i) => (
+                        <Badge
+                          key={i}
+                          variant="outline"
+                          className="font-normal"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <span className="text-sm font-medium text-[#2b42f3] flex items-center gap-2 group-hover:underline">
                       View Project
                       <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </a>
-                  </Button>
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </a>
             </motion.div>
           ))}
         </div>
