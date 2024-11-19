@@ -2,13 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "./ui/card";
-import {
-  Pen,
-  ImageIcon,
-  ShoppingCart,
-  Code,
-  MessageSquare,
-} from "lucide-react";
+import { ImageIcon, ShoppingCart, Code, MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface Service {
