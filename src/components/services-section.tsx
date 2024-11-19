@@ -1,35 +1,89 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "./ui/card";
-import { Pen } from "lucide-react";
+import {
+  Pen,
+  ImageIcon,
+  ShoppingCart,
+  Code,
+  MessageSquare,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 interface Service {
   title: string;
   description: string;
+  icon: React.ElementType;
+  color: string;
+  features: string[];
 }
 
-// Sample services data
-const services: Service[] = Array(6).fill({
-  title: "Graphics & Video",
-  description:
-    "We craft captivating visuals that bring your brand to life, from eye-catching logos to engaging social media posts.",
-});
+const services: Service[] = [
+  {
+    title: "Graphics & Video",
+    description: "Stunning visuals that capture attention and tell your story",
+    icon: ImageIcon,
+    color: "bg-[#2B42F3]",
+    features: [
+      "Motion Graphics",
+      "Brand Identity",
+      "Video Production",
+      "3D Animation",
+    ],
+  },
+  {
+    title: "Ecommerce",
+    description:
+      "Convert browsers into buyers with seamless shopping experiences",
+    icon: ShoppingCart,
+    color: "bg-[#FF312E]",
+    features: [
+      "Custom Stores",
+      "Payment Integration",
+      "Inventory Management",
+      "Analytics",
+    ],
+  },
+  {
+    title: "Web & App",
+    description: "Digital solutions that work flawlessly across all devices",
+    icon: Code,
+    color: "bg-[#FAD403]",
+    features: [
+      "Progressive Web Apps",
+      "Mobile Development",
+      "UI/UX Design",
+      "Cloud Solutions",
+    ],
+  },
+  {
+    title: "Content & Marketing",
+    description: "Strategic content that drives engagement and growth",
+    icon: MessageSquare,
+    color: "bg-[#2B42F3]",
+    features: [
+      "Content Strategy",
+      "Social Media",
+      "SEO Optimization",
+      "Email Campaigns",
+    ],
+  },
+];
 
 export default function ServicesSection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  // Set up the Intersection Observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Change condition to trigger only after scrolling down a bit more
-        if (entry.isIntersecting && entry.intersectionRatio > 0.2) { // Change the ratio to determine how much of the section should be visible
+        if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
           setIsVisible(true);
-          observer.disconnect(); // Stop observing once it becomes visible
+          observer.disconnect();
         }
       },
-      { threshold: 0.2 } // Trigger when 20% of the component is visible
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -43,13 +97,11 @@ export default function ServicesSection() {
     };
   }, []);
 
-  // Animation variants for the main section
   const sectionVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
 
-  // Animation variants for individual service cards
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -62,9 +114,8 @@ export default function ServicesSection() {
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}
       variants={sectionVariants}
-      transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }} // Delay for the section animation
+      transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
     >
-      {/* Mobile zigzag border */}
       <div className="absolute top-0 left-0 right-0 h-8 block md:hidden">
         <svg
           className="w-full h-full"
@@ -80,7 +131,6 @@ export default function ServicesSection() {
         </svg>
       </div>
 
-      {/* Desktop zigzag border */}
       <div className="absolute top-0 left-0 right-0 h-8 hidden md:block">
         <svg
           className="w-full h-full"
@@ -110,13 +160,15 @@ export default function ServicesSection() {
               transition={{
                 duration: 0.5,
                 ease: "easeInOut",
-                delay: index * 0.1 + 0.3, // Stagger the animations with an additional delay for each card
+                delay: index * 0.1 + 0.3,
               }}
             >
               <Card className="overflow-hidden bg-white">
                 <CardContent className="flex items-start gap-4 p-6">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-600">
-                    <Pen className="h-6 w-6 text-white" />
+                  <div
+                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full ${service.color}`}
+                  >
+                    <service.icon className="h-6 w-6 text-white" />
                   </div>
                   <div className="space-y-1">
                     <h3 className="text-xl font-semibold text-gray-900">
@@ -130,8 +182,8 @@ export default function ServicesSection() {
           ))}
         </div>
         <p className="mt-12 text-center text-lg text-white">
-          We will have some extra text here, explaining that we have these
-          services and many more in-house.
+          We offer these services and many more in-house to meet all your
+          digital needs.
         </p>
       </div>
     </motion.div>
