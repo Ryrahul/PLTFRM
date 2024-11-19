@@ -33,7 +33,7 @@ const FloatingIcon: FC<{
         color === "blue" ? "bg-blue-600" : "bg-red-500"
       } text-white p-3 md:p-4 rounded-full shadow-lg`}
     >
-      <Icon className="w-6 h-6 md:w-6 md:h-6" />
+      <Icon className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10" />
     </div>
   </motion.div>
 );
@@ -53,7 +53,7 @@ const HeroSection: FC = () => {
       </div>
 
       <motion.div
-        className="container mx-auto px-4  relative "
+        className="container mx-auto px-4 relative"
         initial="hidden"
         animate="visible"
         variants={contentVariants}
@@ -80,44 +80,46 @@ const HeroSection: FC = () => {
         </div>
 
         <div className="mt-20 flex justify-center min-h-">
-          <div className="relative w-[150px] md:w-[290px]">
+          <div className="relative w-[80%] sm:w-[60%] md:w-[40%] lg:w-[40%] xl:w-[40%]">
             <img src="./globe.svg" className="w-full h-auto object-cover" />
           </div>
         </div>
+
+        {/* Floating Icons with more vertical gaps */}
         <FloatingIcon
           Icon={ShoppingBag}
           color="blue"
-          position="top-[calc(100vh-36rem)] left-4 md:top-1/4 md:left-16 lg:left-12"
+          position="top-[calc(100vh-34rem)] left-4 md:top-1/4 md:left-16 lg:left-12"
           delay="0s"
         />
         <FloatingIcon
           Icon={Megaphone}
           color="blue"
-          position="top-[calc(100vh-36rem)] right-4 md:top-1/4 md:right-16 lg:right-12"
+          position="top-[calc(100vh-34rem)] right-4 md:top-1/4 md:right-16 lg:right-12"
           delay="0s"
         />
         <FloatingIcon
           Icon={PenTool}
           color="red"
-          position="top-[calc(100vh-25rem)] left-4 md:top-1/2 md:left-1/4 md:mt-20"
+          position="top-[calc(100vh-23rem)] left-4 md:top-1/2 md:left-1/4 md:mt-24"
           delay="0.5s"
         />
         <FloatingIcon
           Icon={Globe}
           color="blue"
-          position="bottom-[calc(100vh-25rem)] right-4 md:bottom-1/3 md:bottom-16 md:right-32"
+          position="bottom-[calc(100vh-23rem)] right-4 md:bottom-1/3 md:bottom-16 md:right-32"
           delay="1.5s"
         />
         <FloatingIcon
           Icon={FileText}
           color="red"
-          position="top-[calc(100vh-25rem)] right-4 md:top-1/2 md:right-1/4 md:mt-20"
+          position="top-[calc(100vh-23rem)] right-4 md:top-1/2 md:right-1/4 md:mt-24"
           delay="0.5s"
         />
         <FloatingIcon
           Icon={Video}
           color="red"
-          position="bottom-[calc(100vh-25rem)] left-4 md:bottom-1/3 md:bottom-16 md:left-32"
+          position="bottom-[calc(100vh-23rem)] left-4 md:bottom-1/3 md:bottom-16 md:left-32"
           delay="1.2s"
         />
       </motion.div>
