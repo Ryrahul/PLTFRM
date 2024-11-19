@@ -76,7 +76,7 @@ const HeroSection: FC = () => {
             We craft digital solutions that drive growth, boost visibility, and
             engage audiences.
           </p>
-          <div className="py-20">
+          <div className="py-16">
             <QuoteButton />
           </div>
         </div>
