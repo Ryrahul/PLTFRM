@@ -49,8 +49,24 @@ export default function AboutUs() {
       variants={sectionVariants}
       transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
     >
-      {/* Zigzag border */}
-      <div className="absolute top-0 left-0 right-0 h-8">
+      {/* Mobile zigzag border */}
+      <div className="absolute top-0 left-0 right-0 h-8 block md:hidden">
+        <svg
+          className="w-full h-full"
+          viewBox="0 0 240 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 0V4L10 8L20 4L30 8L40 4L50 8L60 4L70 8L80 4L90 8L100 4L110 8L120 4L130 8L140 4L150 8L160 4L170 8L180 4L190 8L200 4L210 8L220 4L230 8L240 4V0H0Z"
+            fill="#2d43f3"
+          />
+        </svg>
+      </div>
+
+      {/* Desktop zigzag border */}
+      <div className="absolute top-0 left-0 right-0 h-8 hidden md:block">
         <svg
           className="w-full h-full"
           viewBox="0 0 1200 32"
@@ -64,6 +80,7 @@ export default function AboutUs() {
           />
         </svg>
       </div>
+
       <div className="container mx-auto px-4 pt-20 pb-12">
         <div className="flex flex-col md:flex-row gap-12 items-stretch max-w-6xl mx-auto">
           {/* Left column - Text content */}
@@ -90,38 +107,15 @@ export default function AboutUs() {
                   href="https://pltfrm-ruddy.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-bold text-blue-500 hover:underline"
+                  className="font-bold text-[#2b42f3] hover:underline"
                 >
                   PLTFRM.WTF
                 </a>{" "}
                 is a hub of innovation and imagination, true to its name WTF –{" "}
                 <em>Watch the Future</em>. We offer a diverse range of services
-                designed to meet your business needs, including:
+                designed to meet your business needs.
               </motion.p>
-              <motion.ul
-                className="list-disc ml-6 space-y-2"
-                variants={textVariants}
-                initial="hidden"
-                animate={isVisible ? "visible" : "hidden"}
-                transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 }}
-              >
-                <li>Branding and graphic design</li>
-                <li>Digital marketing</li>
-                <li>Content creation</li>
-              </motion.ul>
-              <motion.p
-                className="relative"
-                variants={textVariants}
-                initial="hidden"
-                animate={isVisible ? "visible" : "hidden"}
-                transition={{ duration: 0.5, ease: "easeInOut", delay: 0.6 }}
-              >
-                We deliver high-quality solutions that drive tangible results.
-                Our dedicated team takes pride in ensuring top-notch client
-                satisfaction, having successfully collaborated with numerous
-                clients across industries to elevate their brands and achieve
-                their goals.
-              </motion.p>
+
               <motion.p
                 className="relative"
                 variants={textVariants}
@@ -134,7 +128,7 @@ export default function AboutUs() {
                   href="https://pltfrm-ruddy.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-bold text-blue-500 hover:underline"
+                  className="font-bold text-[#2b42f3] hover:underline"
                 >
                   PLTFRM.WTF
                 </a>{" "}
@@ -143,48 +137,7 @@ export default function AboutUs() {
                 “earn while you learn” program empowers the student community to
                 develop real-world skills while making a significant impact.
               </motion.p>
-              <motion.p
-                className="relative"
-                variants={textVariants}
-                initial="hidden"
-                animate={isVisible ? "visible" : "hidden"}
-                transition={{ duration: 0.5, ease: "easeInOut", delay: 0.8 }}
-              >
-                Our innovative ventures include:
-              </motion.p>
-              <motion.ul
-                className="list-disc ml-6 space-y-2"
-                variants={textVariants}
-                initial="hidden"
-                animate={isVisible ? "visible" : "hidden"}
-                transition={{ duration: 0.5, ease: "easeInOut", delay: 0.9 }}
-              >
-                <li>
-                  <a
-                    href="https://www.sellenza.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-bold text-blue-500 hover:underline"
-                  >
-                    Sellenza
-                  </a>
-                  : A thriving e-commerce marketplace.
-                </li>
-                <li>
-                  <a
-                    href="https://www.sellenza.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-bold text-blue-500 hover:underline"
-                  >
-                    Aanyavaan
-                  </a>{" "}
-                  : A white-labeled saree brand.
-                </li>
-                <li>
-                  Supporting businesses across various sectors to take flight.
-                </li>
-              </motion.ul>
+
               <motion.p
                 className="relative"
                 variants={textVariants}
@@ -197,7 +150,7 @@ export default function AboutUs() {
                   href="https://pltfrm-ruddy.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-bold text-blue-500 hover:underline"
+                  className="font-bold text-[#2b42f3] hover:underline"
                 >
                   PLTFRM.WTF
                 </a>
@@ -206,19 +159,19 @@ export default function AboutUs() {
               </motion.p>
             </div>
           </div>
-          {/* Right column - Image placeholder */}
+          {/* Right column - Image */}
           <motion.div
-            className="bg-red-500 w-full md:w-1/2 flex-1 flex items-center justify-center"
+            className="w-full md:w-1/2 flex-1 flex items-center justify-center"
             variants={textVariants}
             initial="hidden"
             animate={isVisible ? "visible" : "hidden"}
             transition={{ duration: 0.5, ease: "easeInOut", delay: 0.3 }}
           >
-            <div className="p-8 border-2 border-white w-full h-full flex items-center justify-center">
-              <p className="text-white text-3xl font-bold text-center">
-                A photo that relates to the agency
-              </p>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Agency related visual"
+              className="w-full h-full object-cover rounded-md"
+            />
           </motion.div>
         </div>
       </div>
