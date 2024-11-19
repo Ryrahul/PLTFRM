@@ -7,7 +7,6 @@ import {
   FileText,
   Video,
 } from "lucide-react";
-import globe from "../assets/globe.png";
 import QuoteButton from "./quote-button";
 import { motion } from "framer-motion";
 
