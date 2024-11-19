@@ -110,7 +110,7 @@ export default function ServicesSection() {
       variants={sectionVariants}
       transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
     >
-      <div className="absolute top-0 left-0 right-0 h-8 block md:hidden">
+      {/* <div className="absolute top-0 left-0 right-0 h-8 block md:hidden">
         <svg
           className="w-full h-full"
           viewBox="0 0 240 8"
@@ -123,7 +123,7 @@ export default function ServicesSection() {
             fill="white"
           />
         </svg>
-      </div>
+      </div> */}
 
       <div className="absolute top-0 left-0 right-0 h-8 hidden md:block">
         <svg

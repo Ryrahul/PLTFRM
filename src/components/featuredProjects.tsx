@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
@@ -34,11 +35,11 @@ export default function FeaturedProjects({ projects = defaultProjects }) {
                 rel="noopener noreferrer"
                 className="block group rounded-3xl overflow-hidden bg-white border shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#2b42f3] focus:ring-offset-2"
               >
-                <div className="aspect-[4/3] relative bg-gray-50 p-12">
+                <div className="aspect-[4/3] relative bg-gray-50 p-6">
                   <img
                     src={project.imageUrl}
                     alt={project.title}
-                    className="object-contain w-full h-full p-8"
+                    className="object-contain w-full h-full p-4"
                   />
                 </div>
                 <div className="p-8">
