@@ -26,7 +26,7 @@ const FloatingIcon: FC<{
       ease: "easeInOut",
       repeat: Infinity,
       repeatType: "reverse",
-      delay: parseFloat(delay), // Convert delay to number
+      delay: parseFloat(delay),
     }}
   >
     <div
@@ -40,7 +40,6 @@ const FloatingIcon: FC<{
 );
 
 const HeroSection: FC = () => {
-  // Animation variants for the main content
   const contentVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -48,14 +47,12 @@ const HeroSection: FC = () => {
 
   return (
     <main className="relative overflow-hidden">
-      {/* Grid Background */}
       <div className="absolute inset-0 grid grid-cols-[repeat(auto-fill,minmax(40px,1fr))] grid-rows-[repeat(auto-fill,minmax(40px,1fr))]">
         {Array.from({ length: 1000 }).map((_, i) => (
           <div key={i} className="border-[0.5px] border-gray-100" />
         ))}
       </div>
 
-      {/* Main Content */}
       <motion.div
         className="container mx-auto px-4 py-1 relative"
         initial="hidden"
@@ -63,7 +60,7 @@ const HeroSection: FC = () => {
         variants={contentVariants}
         transition={{ duration: 0.8, ease: "easeInOut" }}
       >
-        <div className="max-w-4xl mx-auto text-center space-y-4 md:space-y-6">
+        <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-6">
           <motion.h1
             className="text-4xl md:text-7xl leading-tight md:leading-normal font-extrabold text-[#2B42F3] relative z-10"
             initial="hidden"
@@ -83,7 +80,6 @@ const HeroSection: FC = () => {
           <QuoteButton />
         </div>
 
-        {/* Crystal Ball Image */}
         <div className="mt-20 flex justify-center">
           <div className="relative w-[150px] md:w-[290px]">
             <img
@@ -96,7 +92,6 @@ const HeroSection: FC = () => {
           </div>
         </div>
 
-        {/* Floating Icons */}
         <FloatingIcon
           Icon={ShoppingBag}
           color="blue"
