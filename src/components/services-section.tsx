@@ -124,7 +124,7 @@ export default function ServicesSection() {
           />
         </svg>
       </div> */}
-
+      {/* 
       <div className="absolute top-0 left-0 right-0 h-8 hidden md:block">
         <svg
           className="w-full h-full"
@@ -138,7 +138,7 @@ export default function ServicesSection() {
             fill="white"
           />
         </svg>
-      </div>
+      </div> */}
 
       <div className="mx-auto max-w-6xl pt-8">
         <h1 className="mb-16 text-4xl font-extrabold text-white md:text-5xl lg:text-6xl">

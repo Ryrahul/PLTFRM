@@ -54,13 +54,13 @@ const HeroSection: FC = () => {
       </div>
 
       <motion.div
-        className="container mx-auto px-4 py-1 relative"
+        className="container mx-auto px-4  relative "
         initial="hidden"
         animate="visible"
         variants={contentVariants}
         transition={{ duration: 0.8, ease: "easeInOut" }}
       >
-        <div className="max-w-4xl mx-auto text-center py-6 space-y-8 md:space-y-6">
+        <div className="max-w-4xl mx-auto text-center py-6 space-y-8 md:space-y-6 md:py-10">
           <motion.h1
             className="text-4xl md:text-7xl mt-6 md:mt-1 leading-tight md:leading-normal font-extrabold text-[#2B42F3] relative z-10"
             initial="hidden"
@@ -80,15 +80,9 @@ const HeroSection: FC = () => {
           <QuoteButton />
         </div>
 
-        <div className="mt-20 flex justify-center">
+        <div className="mt-20 flex justify-center min-h-">
           <div className="relative w-[150px] md:w-[290px]">
-            <img
-              src={globe}
-              alt="Crystal ball illustration"
-              width={400}
-              height={500}
-              className="w-full h-auto object-cover"
-            />
+            <img src="./globe.svg" className="w-full h-auto object-cover" />
           </div>
         </div>
         <FloatingIcon
