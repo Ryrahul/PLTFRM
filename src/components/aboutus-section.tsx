@@ -104,7 +104,7 @@ export default function AboutUs() {
                 transition={{ duration: 0.5, ease: "easeInOut", delay: 0.4 }}
               >
                 <a
-                  href="https://pltfrm-ruddy.vercel.app/"
+                  href="https://www.pltfrm.wtf/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-bold text-[#2b42f3] hover:underline"
@@ -125,7 +125,7 @@ export default function AboutUs() {
               >
                 What makes us truly unique is that{" "}
                 <a
-                  href="https://pltfrm-ruddy.vercel.app/"
+                  href="https://www.pltfrm.wtf/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-bold text-[#2b42f3] hover:underline"
