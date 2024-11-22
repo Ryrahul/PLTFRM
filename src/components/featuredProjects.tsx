@@ -13,7 +13,7 @@ export default function FeaturedProjects({ projects = defaultProjects }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold mb-4 text-[#2b42f3]">
+          <h2 className="text-4xl font-bold mb-4 text-[#0D3B66]">
             Featured Projects
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -75,13 +75,8 @@ export default function FeaturedProjects({ projects = defaultProjects }) {
             </motion.div>
           ))}
         </div>
-        <motion.div
-          className="mt-20 max-w-5xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#2b42f3] to-[#2b42f3]/90 p-8 md:p-12">
+        <motion.div className="mt-20 max-w-5xl mx-auto">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#0D3B66] to-[#0D3B66]/90 p-8 md:p-12">
             <div className="absolute inset-0 bg-grid-white/10" />
             <div className="relative flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="text-center md:text-left">
