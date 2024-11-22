@@ -1,9 +1,8 @@
-// Footer.tsx
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2B42F3] text-white">
+    <footer className="bg-[#0D3B66] text-white">
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
@@ -30,26 +29,26 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Follow Us</h4>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-blue-200 transition-colors">
+              <a href="#" className="hover:text-[#FAF0CA] transition-colors">
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </a>
-              <a href="#" className="hover:text-blue-200 transition-colors">
+              <a href="#" className="hover:text-[#FAF0CA] transition-colors">
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </a>
-              <a href="#" className="hover:text-blue-200 transition-colors">
+              <a href="#" className="hover:text-[#FAF0CA] transition-colors">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </a>
-              <a href="#" className="hover:text-blue-200 transition-colors">
+              <a href="#" className="hover:text-[#FAF0CA] transition-colors">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </a>
             </div>
           </div>
         </div>
-        <div className="border-t border-blue-400 mt-8 pt-8 text-center text-sm">
+        <div className="border-t border-[#FAF0CA]/20 mt-8 pt-8 text-center text-sm">
           <p>
             &copy; {new Date().getFullYear()} PLTFRM.WTF. All rights reserved.
           </p>
