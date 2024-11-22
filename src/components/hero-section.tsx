@@ -61,7 +61,7 @@ const HeroSection: FC = () => {
       >
         <div className="max-w-4xl mx-auto text-center py-6 space-y-8 md:space-y-4 md:py-8 relative z-10">
           <motion.h1
-            className="text-4xl md:text-7xl mt-6 md:mt-1 leading-tight md:leading-normal font-extrabold text-[#2B42F3] relative z-10"
+            className="text-4xl md:text-7xl mt-6 md:mt-1 leading-tight md:leading-normal font-extrabold text-[#0D3B66] relative z-10"
             initial="hidden"
             animate="visible"
             variants={{
@@ -72,7 +72,7 @@ const HeroSection: FC = () => {
           >
             Watch The Future
           </motion.h1>
-          <p className="text-lg md:py-4 md:text-2xl text-gray-600 font-medium px-4 relative z-10 ">
+          <p className="text-lg md:py-4 md:text-2xl text-gray-600 font-medium px-4 relative z-10">
             We craft digital solutions that drive growth, boost visibility, and
             engage audiences.
           </p>
