@@ -60,7 +60,7 @@ export default function ContactUs() {
         <Input
           id="name"
           placeholder="Your Name"
-          className="border-gray-300 focus:border-[#2B42F3] focus:ring-[#2B42F3] text-base py-2"
+          className="border-gray-300 focus:border-[#0D3B66] focus:ring-[#0D3B66] text-base py-2"
         />
       </div>
       <div>
@@ -74,7 +74,7 @@ export default function ContactUs() {
           id="email"
           type="email"
           placeholder="you@example.com"
-          className="border-gray-300 focus:border-[#2B42F3] focus:ring-[#2B42F3] text-base py-2"
+          className="border-gray-300 focus:border-[#0D3B66] focus:ring-[#0D3B66] text-base py-2"
         />
       </div>
       <div>
@@ -87,7 +87,7 @@ export default function ContactUs() {
         <Input
           id="subject"
           placeholder="What's this about?"
-          className="border-gray-300 focus:border-[#2B42F3] focus:ring-[#2B42F3] text-base py-2"
+          className="border-gray-300 focus:border-[#0D3B66] focus:ring-[#0D3B66] text-base py-2"
         />
       </div>
       <div>
@@ -101,13 +101,13 @@ export default function ContactUs() {
           id="message"
           placeholder="Tell us about your project"
           rows={4}
-          className="border-gray-300 focus:border-[#2B42F3] focus:ring-[#2B42F3] text-base"
+          className="border-gray-300 focus:border-[#0D3B66] focus:ring-[#0D3B66] text-base"
         />
       </div>
       <Button
         type="submit"
         size="lg"
-        className="w-full gap-2 bg-[#2B42F3] hover:bg-[#1E32D6] text-white transition-colors duration-300 text-base py-4"
+        className="w-full gap-2 bg-[#0D3B66] hover:bg-[#0D3B66]/90 text-white transition-colors duration-300 text-base py-4"
       >
         Send Message <Send className="w-5 h-5" />
       </Button>
@@ -115,7 +115,7 @@ export default function ContactUs() {
   );
 
   return (
-    <section className="py-12 md:py-24 bg-gray-50 min-h-screen flex items-center">
+    <section className="py-12 md:py-24 bg-[#FAF0CA] min-h-screen flex items-center">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -125,7 +125,7 @@ export default function ContactUs() {
         >
           {/* Desktop version */}
           <div className="hidden md:grid md:grid-cols-2">
-            <div className="p-12 lg:p-16 bg-[#2B42F3] text-white">
+            <div className="p-12 lg:p-16 bg-[#0D3B66] text-white">
               <h2 className="text-5xl font-bold mb-8">Contact Us</h2>
               <p className="text-xl mb-12 leading-relaxed">
                 We'd love to hear from you. Fill out the form and we'll get back
@@ -143,8 +143,8 @@ export default function ContactUs() {
                   transition={{ duration: 0.5 }}
                   className="text-center py-12"
                 >
-                  <CheckCircle className="w-24 h-24 text-green-500 mx-auto mb-6" />
-                  <h3 className="text-3xl font-semibold text-gray-800 mb-4">
+                  <CheckCircle className="w-24 h-24 text-[#F4D35E] mx-auto mb-6" />
+                  <h3 className="text-3xl font-semibold text-[#0D3B66] mb-4">
                     Thank You!
                   </h3>
                   <p className="text-xl text-gray-600">
@@ -158,7 +158,7 @@ export default function ContactUs() {
 
           {/* Mobile version */}
           <div className="md:hidden">
-            <div className="p-8 bg-[#2B42F3] text-white">
+            <div className="p-8 bg-[#0D3B66] text-white">
               <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
               <p className="text-lg mb-6 leading-relaxed">
                 We'd love to hear from you. Fill out the form and we'll get back
@@ -170,7 +170,7 @@ export default function ContactUs() {
                 <>
                   <ContactForm />
                   <div className="mt-8 pt-8 border-t border-gray-200">
-                    <h3 className="text-2xl font-bold mb-4 text-gray-800">
+                    <h3 className="text-2xl font-bold mb-4 text-[#0D3B66]">
                       Get in Touch
                     </h3>
                     <ContactInfo />
@@ -183,8 +183,8 @@ export default function ContactUs() {
                   transition={{ duration: 0.5 }}
                   className="text-center py-8"
                 >
-                  <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-3">
+                  <CheckCircle className="w-16 h-16 text-[#F4D35E] mx-auto mb-4" />
+                  <h3 className="text-2xl font-semibold text-[#0D3B66] mb-3">
                     Thank You!
                   </h3>
                   <p className="text-lg text-gray-600">
