@@ -68,7 +68,7 @@ export default function ClientTestimonials() {
   return (
     <motion.section
       ref={sectionRef}
-      className="py-20 bg-gray-50"
+      className="py-20 bg-[#FAF0CA]"
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}
       variants={sectionVariants}
@@ -80,7 +80,7 @@ export default function ClientTestimonials() {
           variants={cardVariants}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
-          <h2 className="text-4xl font-bold mb-4 text-[#2B42F3]">
+          <h2 className="text-4xl font-bold mb-4 text-[#0D3B66]">
             Client Testimonials
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
