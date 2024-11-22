@@ -4,8 +4,7 @@ import { CompanyData as companies } from "../data/data";
 
 const BrandCarousel: React.FC = () => {
   return (
-    <section className="w-full bg-[#2B42F3] py-20 text-white text-center">
-      {" "}
+    <section className="w-full bg-[#0D3B66] py-20 text-white text-center">
       <div className="max-w-4xl mx-auto mb-10">
         <h2 className="text-3xl font-bold mb-4">Our Gear</h2>
         <p className="text-lg">
@@ -13,7 +12,6 @@ const BrandCarousel: React.FC = () => {
           clients.
         </p>
       </div>
-      {/* Carousel */}
       <Carousel
         plugins={[
           Autoplay({
